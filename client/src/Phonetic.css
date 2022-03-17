@@ -1,0 +1,20 @@
+.Phonetic-text {
+  float: left;
+  font-size: 24px;
+  padding: 21px 10px;
+}
+.Phonetic-button {
+  background:white;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  border: 2px solid #596374;
+  border-radius: 50%;
+  float: left;
+  height: 50px;
+  width: 50px;
+  margin:10px;
+}
+.Phonetic-button:hover {
+  border: 2px solid #1cb1a8;
+}

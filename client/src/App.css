@@ -1,0 +1,29 @@
+.App {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px auto;
+  max-width: 1100px;
+  padding: 20px;
+}
+
+.App-form {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.form-input {
+  width: 100%;
+  font-size: 3em;
+  padding: 22px 15px;
+  margin: 8px 0;
+  border-radius: 40px;
+  box-sizing: border-box;
+}
+
+.App-header {
+  background: rgb(14, 10, 32);
+  padding: 20px;
+  margin-bottom: 25px;
+  min-height: 210px;
+    position: sticky;
+    top: 0;
+}
