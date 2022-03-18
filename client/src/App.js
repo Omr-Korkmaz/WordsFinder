@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Info from './components/Info/Info';
 import axios from 'axios';
 import './App.css';
-import randomWords from 'random-words';
 
 const App = () => {
   const [keyword, setKeyword] = useState('Salt');
