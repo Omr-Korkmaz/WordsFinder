@@ -1,37 +1,26 @@
-import React, { useState, useEffect } from "react";
-import Info from "./Info";
-import axios from "axios";
-import "./App.css";
+import React, { useState, useEffect } from 'react';
+import Info from './components/Info';
+import axios from 'axios';
+import './App.css';
 
-const App = (props) => {
-  const [keyword, setKeyword] = useState("");
+const App = () => {
+  const [keyword, setKeyword] = useState('');
   const [data, setData] = useState(null);
 
-  // const searchWord = () => {
   //   //api documentation: https://dictionaryapi.dev/
-  //   let apiUrl = `http://localhost:4000/api/${keyword}`;
-  //       // let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+  const searchWord = async () => {
+    try {
+      const data = await axios.get(`http://localhost:4000/api/${keyword}`);
+      await setData(data.data[0]);
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  //   axios.get(apiUrl).then(res=>setData(res.data[0]));
-  // };
-
-
-const searchWord  = async ()=>{
-  try{
-    const data = await axios.get(`http://localhost:4000/api/${keyword}`)
-    await setData(data.data[0]);
-  console.log(data);
-  }
-catch(err){
-  console.log(err)
-}
-}
-
-// useEffect(()=>{
-//   searchWord();
-// },[keyword])
-
-  
+  // useEffect(()=>{
+  //   searchWord();
+  // },[keyword])
 
   console.log(searchWord);
   console.log(data);
@@ -47,12 +36,12 @@ catch(err){
 
   return (
     <div>
-      <header className="App-header">
-        <form className="App-form" onSubmit={handleSubmit}>
+      <header className='header'>
+        <form className='form' onSubmit={handleSubmit}>
           <input
-            placeholder="Search"
-            type="text"
-            className="form-input"
+            placeholder='Search'
+            type='text'
+            className='search-input'
             onChange={changeWord}
             value={keyword}
           />
