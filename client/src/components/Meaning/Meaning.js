@@ -1,5 +1,5 @@
 import React from 'react';
-import Example from './Example';
+import Example from '../Example/Example';
 import './Meaning.css';
 
 const Meaning = ({data}) => {
