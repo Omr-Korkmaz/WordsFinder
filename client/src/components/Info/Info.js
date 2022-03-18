@@ -7,7 +7,7 @@ const Info = ({data}) => {
   if (data) {
     return (
       <div>
-        <h2 className='info-word'>{data.word}</h2>
+        <h2 className='info'>{data.word}</h2>
         {data.phonetics.map((phonetic, index)=> {
           return (
             <div key={index}>
