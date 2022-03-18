@@ -8,7 +8,7 @@ router.get('/:word', (req, res) => {
     const word = req.params.word;
     console.log(word);
     
-    const url =  'https://api.dictionaryapi.dev/api/v2/entries/en/'+word;
+    const url =  `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     console.log(url);
    
 
@@ -16,7 +16,7 @@ router.get('/:word', (req, res) => {
       .then(response => { return response.json(); })
         .then(data => { 
           console.log(data); 
-          res.send({data});        
+          res.send(data);        
         })
           .catch(err => { console.log(err); });        
 });

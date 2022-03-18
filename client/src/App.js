@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Info from "./Info";
 import axios from "axios";
 import "./App.css";
@@ -7,13 +7,30 @@ const App = (props) => {
   const [keyword, setKeyword] = useState("");
   const [data, setData] = useState(null);
 
-  const searchWord = () => {
-    //api documentation: https://dictionaryapi.dev/
-    // let apiUrl = `http://localhost:4000/api/words/${keyword}`;
-        let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+  // const searchWord = () => {
+  //   //api documentation: https://dictionaryapi.dev/
+  //   let apiUrl = `http://localhost:4000/api/${keyword}`;
+  //       // let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
 
-    axios.get(apiUrl).then(res=>setData(res.data[0]));
-  };
+  //   axios.get(apiUrl).then(res=>setData(res.data[0]));
+  // };
+
+
+const searchWord  = async ()=>{
+  try{
+    const data = await axios.get(`http://localhost:4000/api/${keyword}`)
+    await setData(data.data[0]);
+  console.log(data);
+  }
+catch(err){
+  console.log(err)
+}
+}
+
+// useEffect(()=>{
+//   searchWord();
+// },[keyword])
+
   
 
   console.log(searchWord);

@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 
 const router = require('./router'); 
-app.use("/api/words/", router);
+app.use("/api/", router);
 
 app.get('/', (req, res) => {
     const d = new Date();
