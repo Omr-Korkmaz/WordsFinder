@@ -15,7 +15,7 @@ const Phonetic = (props) => {
           type="button"
           className="Phonetic-button"
           onClick={handleClick}
-        ></button>
+        >Listen</button>
         <span className="Phonetic-text">{props.phonetic.text}</span>
       </div>
     );

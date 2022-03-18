@@ -9,13 +9,13 @@ const App = (props) => {
 
   const searchWord = () => {
     //api documentation: https://dictionaryapi.dev/
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-    axios.get(apiUrl).then(getData);
-  };
+    // let apiUrl = `http://localhost:4000/api/words/${keyword}`;
+        let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
 
-  const getData = (response) => {
-    setData(response.data[0]);
+    axios.get(apiUrl).then(res=>setData(res.data[0]));
   };
+  
+
   console.log(searchWord);
   console.log(data);
 

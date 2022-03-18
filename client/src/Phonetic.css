@@ -9,10 +9,10 @@
   background-size: 80%;
   background-position: center;
   border: 2px solid #596374;
-  border-radius: 50%;
+  border-radius: 35%;
   float: left;
   height: 50px;
-  width: 50px;
+  width: 70px;
   margin:10px;
 }
 .Phonetic-button:hover {
