@@ -3,19 +3,19 @@ import Meaning from '../Meaning/Meaning';
 import Phonetic from '../Phonetic/Phonetic';
 import './Info.css';
 
-const Info = (props) => {
-  if (props.data) {
+const Info = ({data}) => {
+  if (data) {
     return (
       <div>
-        <h2 className='Info-word'>{props.data.word}</h2>
-        {props.data.phonetics.map((phonetic, index)=> {
+        <h2 className='info-word'>{data.word}</h2>
+        {data.phonetics.map((phonetic, index)=> {
           return (
             <div key={index}>
               <Phonetic phonetic={phonetic} />
             </div>
           );
         })}
-        {props.data.meanings.map((meaning, index)=> {
+        {data.meanings.map((meaning, index)=> {
           return (
             <div key={index}>
               <Meaning data={meaning} />

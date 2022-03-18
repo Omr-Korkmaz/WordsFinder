@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Info from './components/Info/Info';
 import axios from 'axios';
 import './App.css';
+import randomWords from 'random-words';
 
 const App = () => {
-  const [keyword, setKeyword] = useState('');
+  const [keyword, setKeyword] = useState('Salt');
   const [data, setData] = useState(null);
 
   //   //api documentation: https://dictionaryapi.dev/
@@ -17,10 +18,9 @@ const App = () => {
       console.log(err);
     }
   };
-
-  // useEffect(()=>{
-  //   searchWord();
-  // },[keyword])
+  useEffect(()=>{
+    searchWord();
+  },[keyword])
 
   console.log(searchWord);
   console.log(data);
@@ -28,12 +28,12 @@ const App = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     searchWord();
+    setKeyword('');
   };
 
   const changeWord = (event) => {
     setKeyword(event.target.value);
   };
-
   return (
     <div>
       <header className='header'>
@@ -48,6 +48,7 @@ const App = () => {
         </form>
       </header>
       <main>
+    
         <Info data={data} />
       </main>
     </div>

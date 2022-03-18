@@ -1,16 +1,15 @@
-.Meaning-div {
+.meaning {
   margin-bottom: 15px;
   margin: 20px;
 }
-.Meaning-part {
-  display: block;
+.speech {
   font-size: 30px;
   font-weight: bold;
   line-height: 50px;
-  margin-bottom: 0;
+  
   padding: 10px 20px;
 }
-.Meaning-example {
+.meaning-example {
   font-size: 20px;
   display: block;
   padding: 10px;
